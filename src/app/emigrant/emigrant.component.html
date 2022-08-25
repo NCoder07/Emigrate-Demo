@@ -1,0 +1,269 @@
+<app-pre-header></app-pre-header>
+<header></header>
+<navbar></navbar>
+
+<div class="container card">
+  <div class="App container-fluid col-md-12">
+    <div class="row">
+      <div class="container-fluid col-md-12">
+        <form class="form" [formGroup]="emigrantFrom" (ngSubmit)="onSubmit()">
+          <h3
+            style="
+              text-align: left;
+              background-color: #109079;
+              border-radius: 8px;
+              padding: 8px;
+            "
+          >
+            Personal Details:
+          </h3>
+          <br />
+          <div class="container col-md-12">
+            <input
+              style="margin: 5px"
+              type="text"
+              name="firstName"
+              placeholder="Firstname"
+              [(ngModel)]="emigrant.firstName"
+              formControlName="firstName"
+            />
+            <input
+              style="margin: 5px"
+              type="text"
+              name="middleName"
+              placeholder="Middlename "
+              [(ngModel)]="emigrant.middleName"
+              formControlName="middleName"
+            />
+            <input
+              style="margin: 5px"
+              type="text"
+              name="lastName"
+              placeholder="Lastname "
+              [(ngModel)]="emigrant.lastName"
+              formControlName="lastName"
+            />
+          </div>
+          <br />
+          <div class="container col-md-12">
+            <input
+              style="margin: 5px"
+              type="text"
+              name="profession"
+              placeholder="Profession "
+              [(ngModel)]="emigrant.profession"
+              formControlName="profession"
+            />
+            <input
+              style="margin: 5px"
+              type="text"
+              name="education"
+              placeholder="Education "
+              [(ngModel)]="emigrant.education"
+              formControlName="education"
+            />
+            <input
+              style="margin: 5px"
+              type="text"
+              name="address"
+              placeholder="Address "
+              [(ngModel)]="emigrant.address"
+              formControlName="address"
+            />
+          </div>
+          <br />
+          <div class="container col-md-12">
+            <h3
+              style="
+                text-align: left;
+                background-color: #109079;
+                border-radius: 8px;
+                padding: 8px;
+              "
+            >
+              Contact Details:
+            </h3>
+          </div>
+          <br />
+          <div class="container col-md-12">
+            <input
+              style="margin: 5px"
+              type="text"
+              name="contactNumber"
+              placeholder="ContactNo"
+              [(ngModel)]="emigrant.contactNumber"
+              formControlName="contactNumber"
+            />
+            <!-- <input style="margin: 5px" type="text" name="emailId" placeholder="EmailId" /> -->
+            <input
+              style="margin: 5px"
+              type="text"
+              name="gender"
+              placeholder="Gender"
+              [(ngModel)]="emigrant.gender"
+              formControlName="gender"
+            />
+            <br />
+            <label>Date of Birth:</label>
+            <input
+              style="margin: 5px"
+              type="date"
+              name="dateOfBirth"
+              placeholder="Date of Birth"
+              [(ngModel)]="emigrant.dateOfBirth"
+              formControlName="dateOfBirth"
+            />
+          </div>
+          <br />
+
+          <div formGroupName="passport">
+            <div class="container col-md-12">
+              <h3
+                style="
+                  text-align: left;
+                  background-color: #109079;
+                  border-radius: 8px;
+                  padding: 8px;
+                "
+              >
+                Passport Details:
+              </h3>
+            </div>
+            <br />
+            <div class="container col-md-12">
+              <input
+                style="margin: 5px"
+                type="text"
+                name="passportNumber"
+                placeholder="PassportNo "
+                [(ngModel)]="emigrant.passport.passportNumber"
+                formControlName="passportNumber"
+              />
+              <input
+                style="margin: 5px"
+                type="text"
+                name="passportType"
+                placeholder="PassportType "
+                [(ngModel)]="emigrant.passport.passportType"
+                formControlName="passportType"
+              />
+              <input
+                style="margin: 5px"
+                type="text"
+                name="placeOfIssue"
+                placeholder="PlaceOfIssue "
+                [(ngModel)]="emigrant.passport.placeOfIssue"
+                formControlName="placeOfIssue"
+              />
+              <br />
+              <label>IssueDate:</label>
+              <input
+                style="margin: 5px"
+                type="date"
+                name="issueDate"
+                placeholder="Passport Issue Date"
+                [(ngModel)]="emigrant.passport.issueDate"
+                formControlName="issueDate"
+              />
+              <label>ExpiryDate:</label>
+              <input
+                style="margin: 5px"
+                type="date"
+                name="expiryDate"
+                placeholder="Passport Expiry Date"
+                [(ngModel)]="emigrant.passport.expiryDate"
+                formControlName="expiryDate"
+              />
+            </div>
+            <br />
+          </div>
+
+          <div formGroupName="visa">
+            <div class="container col-md-12">
+              <h3
+                style="
+                  text-align: left;
+                  background-color: #109079;
+                  border-radius: 8px;
+                  padding: 8px;
+                "
+              >
+                Visa Details:
+              </h3>
+            </div>
+            <br />
+            <div class="container col-md-12">
+              <input
+                style="margin: 5px"
+                type="text"
+                name="visaNumber"
+                placeholder="VisaNo"
+                [(ngModel)]="emigrant.visa.visaNumber"
+                formControlName="visaNumber"
+              />
+              <input
+                style="margin: 5px"
+                type="text"
+                name="visaType"
+                placeholder="VisaType"
+                [(ngModel)]="emigrant.visa.visaType"
+                formControlName="visaType"
+              />
+              <br />
+              <label>Visa Issue Date:</label>
+              <input
+                style="margin: 5px"
+                type="date"
+                name="visaIssueDate"
+                placeholder="Visa Issue Date"
+                [(ngModel)]="emigrant.visa.visaIssueDate"
+                formControlName="visaIssueDate"
+              />
+              <label>Visa Expiry Date:</label>
+              <input
+                style="margin: 5px"
+                type="date"
+                name="visaExpiryDate"
+                placeholder="Visa Expiry Date"
+                [(ngModel)]="emigrant.visa.visaExpiryDate"
+                formControlName="visaExpiryDate"
+              />
+              <br />
+              <br />
+            </div>
+          </div>
+
+          <br />
+          <div class="row">
+            <div class="col-md-12 mb-3">
+              <div class="form-group">
+                <label>Upload Your Files Here</label>
+                <input
+                  type="file"
+                  class="form-control"
+                  placeholder="Document Upload Here"
+                  (change)="onSelectFile($event)"
+                  style="height: 100%"
+                  accept="application/pdf"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <button class="btn btn-success me-2">Submit Form</button>
+
+            <button
+              class="btn btn-primary"
+              type="button"
+              (click)="onLoadDataClick()"
+            >
+              Load Data
+            </button>
+          </div>
+        </form>
+        
+      </div>
+      {{ emigrant | json }}
+    </div>
+  </div>
+</div>

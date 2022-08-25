@@ -1,0 +1,7 @@
+marquee{
+    background-color: #FFF38C;
+    height: 3.5vh;
+    font-style: italic;
+    animation-duration: 500;
+    /* margin-top: 5px;  */
+}

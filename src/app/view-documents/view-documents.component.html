@@ -1,0 +1,36 @@
+<app-pre-header></app-pre-header>
+<header></header>
+<navbar></navbar>
+
+<table class="table" style="text-align: center;">
+  <thead>
+    <tr>
+      <th scope="col">File Name</th>
+      <th scope="col">File Length</th>
+      <th scope="col">File Upload Date</th>
+      <th scope="col">Mapping ID</th>
+      <th scope="col">Process Name</th>
+      <th scope="col">Doc Type</th>
+      <th scope="col">Uploaded By</th>
+      <th scope="col">Version</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of docs" >
+      <td>{{ d.filename }}</td>
+      <td>{{ d.length }}</td>
+      <td>{{ d.uploadDate }}</td>
+      <td>{{ d.metadata.mappingId }}</td>
+      <td>{{ d.metadata.processName }}</td>
+      <td>{{ d.metadata.docType }}</td>
+      <td>{{ d.metadata.uploadedBy }}</td>
+      <td>{{ d.metadata.version }}</td>
+      <td>
+        <button type="button" class="btn btn-link me-2"><a href="http://10.210.8.153:9393/dms/viewDocumentLatestByMappingIdDocType/{{d.metadata.mappingId}}/{{d.metadata.docType}}" target="_blank">View </a></button>
+        <button type="button" class="btn btn-primary" (click)="Download(d.metadata.mappingId, d.metadata.docType)">Download</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
